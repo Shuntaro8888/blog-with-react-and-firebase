@@ -1,5 +1,7 @@
+//ReactとFireBaseを繋げる接着剤のようなファイル（FireBaseモジュール）
+
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth"; //getAuth(認証するための関数)
 import { getFirestore} from "firebase/firestore"
 
 const firebaseConfig = {
@@ -13,8 +15,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
-const db = getFirestore(app);
+const auth = getAuth(app); //認証の初期化
+const provider = new GoogleAuthProvider(); //インスタンス化
+const db = getFirestore(app); //DBの初期化
 
 export { auth, provider, db };
